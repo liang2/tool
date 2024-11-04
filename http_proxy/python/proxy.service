@@ -1,0 +1,15 @@
+[Unit]
+Description=HTTP/HTTPS Proxy Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/zl/proxy.py
+WorkingDirectory=/home/zl
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
